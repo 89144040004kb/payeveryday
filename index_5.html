@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Оплаты каждый день — бесплатное обучение Кристины Бриин</title>
+<meta name="description" content="Три бесплатных урока для врачей, нутрициологов и экспертов в сфере здоровья о создании автопродукта и закрытой системы продаж.">
+<meta name="theme-color" content="#211c19">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream: #f4efe7;
+    --card: #f2eadf;
+    --ink: #211c19;
+    --hero-1: #27221f;
+    --hero-2: #171513;
+    --dark-card: #211e1c;
+    --gold: #d7c29f;
+    --gold-text: #251f1a;
+    --wine: #7a252a;
+    --muted-on-cream: #6b6259;
+    --muted-on-dark: #d8cec2;
+    --tan-on-dark: #d5c5b2;
+    --lead-on-dark: #e7ded3;
+    --white-on-dark: #fffaf2;
+    --line-on-cream: rgba(33,28,25,0.12);
+    --line-on-dark: rgba(255,255,255,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Manrope', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.brand{ font-family:'Prata', serif; font-weight:400; }
+  .shell{max-width:1152px; margin:0 auto; padding:0 32px;}
+
+  /* nav */
+  .nav{
+    display:flex; justify-content:space-between; align-items:center;
+    padding-top:28px; padding-bottom:28px;
+  }
+  .brand{font-size:1.2rem; color:var(--white-on-dark); letter-spacing:0.01em;}
+  .nav-note{color:var(--muted-on-dark); font-size:0.85rem;}
+
+  /* hero */
+  .hero{
+    background-image: radial-gradient(circle at 75% 10%, rgba(185,154,107,0.16), rgba(0,0,0,0) 30%), linear-gradient(135deg, var(--hero-1), var(--hero-2));
+    padding-bottom:80px;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns: 1fr 594px; gap:48px; align-items:center;
+    padding-top:24px;
+  }
+  .eyebrow{
+    color:var(--muted-on-dark); font-size:0.78rem; letter-spacing:0.05em; margin-bottom:22px; max-width:420px;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 5vw, 3.9rem);
+    color:var(--white-on-dark);
+    line-height:1.08;
+  }
+  .hero h1 em{ font-style:italic; color:var(--gold); }
+  .hero .lead{
+    color:var(--lead-on-dark); font-size:1.1rem; max-width:480px; margin-top:24px;
+  }
+  .benefits{
+    display:flex; flex-wrap:wrap; gap:10px 20px; margin-top:32px; max-width:500px;
+  }
+  .benefits span{ color:var(--tan-on-dark); font-size:0.85rem; }
+  .benefits span::before{ content:"— "; color:var(--wine); }
+  .cta{
+    display:inline-block; margin-top:38px;
+    background:var(--gold); color:var(--gold-text);
+    font-family:'Manrope', sans-serif; font-weight:700; font-size:1rem;
+    padding:13px 28px; border-radius:999px; text-decoration:none;
+    transition:transform .2s ease, background .2s ease;
+  }
+  .cta:hover{ transform:translateY(-1px); background:#e4d3ae; }
+  .meta-line{ margin-top:16px; color:var(--muted-on-dark); font-size:0.8rem; }
+  .hero-photo{
+    width:100%; aspect-ratio:1/1; overflow:hidden;
+    border-radius: 37% 37% 3% 3%;
+  }
+  .hero-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .hero-caption{
+    text-align:center; margin-top:14px; color:var(--muted-on-dark); font-size:0.95rem; font-style:italic;
+  }
+  .hero-caption strong{ color:var(--white-on-dark); font-style:normal; }
+
+  /* section: model (light) */
+  .section{ padding:72px 0; }
+  .section .eyebrow-dark{
+    color:var(--wine); font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:16px;
+  }
+  .section h2{ font-size:clamp(1.8rem, 3.5vw, 2.6rem); max-width:680px; line-height:1.2; }
+  .section h2 em{ color:var(--wine); font-style:italic; }
+  .section p.lead-light{ max-width:600px; margin-top:22px; color:var(--muted-on-cream); font-size:1.08rem; }
+
+  /* journey */
+  .journey{ padding:72px 0 96px; border-top:1px solid var(--line-on-cream); }
+  .journey-head{ display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:12px; margin-bottom:32px;}
+  .progress{ color:var(--muted-on-cream); font-size:0.85rem; }
+
+  .lesson-nav{ display:flex; gap:2px; margin-bottom:0; }
+  .lesson-tab{
+    flex:1; padding:20px 22px; cursor:not-allowed; transition:background .2s ease;
+    background:var(--hero-2); border:none; text-align:left; font-family:'Manrope',sans-serif;
+  }
+  .lesson-tab .tab-num{ display:block; font-size:0.75rem; letter-spacing:0.04em; margin-bottom:4px; color:#8a7d6c; }
+  .lesson-tab .tab-title{ font-family:'Prata', serif; font-size:1.05rem; color:var(--muted-on-dark); }
+  .lesson-tab.unlocked{ cursor:pointer; }
+  .lesson-tab.unlocked .tab-num{ color:var(--tan-on-dark); }
+  .lesson-tab.unlocked .tab-title{ color:var(--white-on-dark); }
+  .lesson-tab.active{ background:var(--card); cursor:default; }
+  .lesson-tab.active .tab-num{ color:var(--wine); }
+  .lesson-tab.active .tab-title{ color:var(--ink); }
+  .lesson-tab.done .tab-num::after{ content:" ✓"; }
+
+  .progress-track{
+    width:160px; height:4px; background:rgba(0,0,0,0.1); margin-top:6px; overflow:hidden;
+  }
+  .progress-fill{ height:100%; background:var(--wine); width:0%; transition:width .3s ease; }
+
+  .lesson-panel{ display:none; }
+  .lesson-panel.active{
+    background:var(--card); padding:48px; display:grid; grid-template-columns: 1fr 1fr; gap:48px; align-items:start;
+  }
+  .next-btn{
+    margin-top:28px; background:transparent; border:1px solid var(--wine); color:var(--wine);
+    font-family:'Manrope',sans-serif; font-weight:700; font-size:0.95rem; padding:12px 24px; border-radius:999px;
+    cursor:pointer; transition:background .2s ease, color .2s ease;
+  }
+  .next-btn:hover{ background:var(--wine); color:#fff; }
+  .lesson-panel .kind{
+    font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--wine); margin-bottom:14px;
+  }
+  .lesson-panel h3{ font-size:1.7rem; margin-bottom:16px; line-height:1.25; }
+  .lesson-panel p.desc{ color:var(--muted-on-cream); margin-bottom:20px; }
+  .lesson-panel ul{ list-style:none; }
+  .lesson-panel li{ position:relative; padding-left:20px; margin-bottom:10px; font-size:0.98rem; }
+  .lesson-panel li::before{ content:"—"; position:absolute; left:0; color:var(--wine); }
+
+  .media-card{
+    background:var(--dark-card); padding:42px; min-height:330px;
+    display:flex; flex-direction:column; justify-content:center; gap:16px;
+  }
+  .media-card .kind{ color:var(--tan-on-dark); }
+  audio{ width:100%; filter: sepia(0.1) saturate(1.05); }
+  .video-wrap{ position:relative; width:100%; aspect-ratio:16/9; }
+  .video-wrap iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .duration{ color:var(--tan-on-dark); font-size:0.82rem; margin-top:4px; }
+
+  @media (max-width: 860px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-photo{ max-width:360px; margin:0 auto; }
+    .lesson-panel{ grid-template-columns:1fr; padding:32px 24px; }
+    .lesson-nav{ flex-direction:column; }
+  }
+
+  /* final block */
+  .final-block{
+    display:none;
+    text-align:center; padding:80px 0; background:linear-gradient(135deg, var(--hero-1), var(--hero-2));
+  }
+  .final-block.visible{ display:block; }
+  .final-block h2{ color:var(--white-on-dark); font-size:2rem; margin-bottom:20px; }
+  .final-block p{ max-width:520px; margin:0 auto; color:var(--lead-on-dark); font-size:1.08rem; }
+  .final-block .cta{ margin-top:34px; }
+
+  footer{
+    padding:44px 32px; text-align:center; color:var(--muted-on-cream); font-size:0.85rem;
+  }
+  footer b{ font-family:'Prata', serif; color:var(--ink); font-weight:400; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <nav class="nav shell">
+    <span class="brand">Кристина Бриин</span>
+    <span class="nav-note">Бесплатное обучение</span>
+  </nav>
+
+  <div class="hero-grid shell">
+    <div class="hero-copy">
+      <p class="eyebrow">Для врачей, нутрициологов и экспертов в сфере здоровья</p>
+      <h1>Оплаты<br><em>каждый день</em></h1>
+      <p class="lead">Как превратить ваши знания в автопродукт и выстроить закрытую систему продаж, которая приводит к оплатам без постоянных консультаций и ежедневных прогревов.</p>
+      <div class="benefits">
+        <span>Без Reels каждый день</span>
+        <span>Без бесплатных диагностик</span>
+        <span>Без «купи-купи-купи»</span>
+        <span>Без манипуляций и уговоров</span>
+      </div>
+      <a class="cta" href="#learning">Начать бесплатное обучение</a>
+      <div class="meta-line">1 подкаст · 2 видеоурока · проходите в своём темпе</div>
+    </div>
+    <div>
+      <div class="hero-photo"><img src="kristina-cover.png" alt="Кристина Бриин"></div>
+      <div class="hero-caption">Кристина Бриин — <strong>делаю умных врачей и нутрициологов богатыми</strong></div>
+    </div>
+  </div>
+</div>
+
+<section class="section shell">
+  <div class="eyebrow-dark">Другая модель работы</div>
+  <h2>Доход эксперта не должен <em>останавливаться</em>, когда он закрывает ноутбук</h2>
+  <p class="lead-light">Большинство сильных специалистов продают только своё время: консультации, разборы и сопровождение. Здесь вы увидите другую модель — когда ваш авторский подход превращается в продукт, а продажу берёт на себя заранее выстроенная система.</p>
+</section>
+
+<section class="journey shell" id="learning">
+  <div class="journey-head">
+    <div>
+      <div class="eyebrow-dark">Ваш маршрут</div>
+      <h2 style="font-size:1.9rem">Три части одной системы</h2>
+    </div>
+    <div class="progress"><span class="progress-text">Пройдено 0 из 3</span>
+      <div class="progress-track"><div class="progress-fill"></div></div>
+    </div>
+  </div>
+
+  <div class="lesson-nav" id="lessonNav">
+    <button class="lesson-tab" data-part="1"><span class="tab-num">Часть 1</span><span class="tab-title">Две реальности</span></button>
+    <button class="lesson-tab" data-part="2"><span class="tab-num">Часть 2</span><span class="tab-title">Автопродукт</span></button>
+    <button class="lesson-tab" data-part="3"><span class="tab-num">Часть 3</span><span class="tab-title">Закрытая система</span></button>
+  </div>
+
+  <!-- ЧАСТЬ 1 -->
+  <article class="lesson-panel" data-part="1">
+    <div>
+      <div class="kind">Часть 1 · Подкаст</div>
+      <h3>Две ветки реальности</h3>
+      <p class="desc">Почему модель консультаций держит эксперта в заложниках — и как перейти к продукту, который продаётся без вашего участия и приносит деньги на автомате.</p>
+      <ul>
+        <li>увидите, почему консультации делают вас бедными</li>
+        <li>поймёте, как один маленький продукт может сделать вас богатым</li>
+        <li>поймёте, почему онлайн-школы не продают консультации</li>
+      </ul>
+      <button class="next-btn" data-next="2">Перейти ко второй части</button>
+    </div>
+    <div class="media-card">
+      <div class="kind">Подкаст</div>
+      <audio controls preload="none">
+        <source src="audio/dve-vetki-realnosti.mp3" type="audio/mpeg">
+      </audio>
+      <div class="duration">15–20 минут</div>
+    </div>
+  </article>
+
+  <!-- ЧАСТЬ 2 -->
+  <article class="lesson-panel" data-part="2">
+    <div>
+      <div class="kind">Часть 2 · Видеоурок</div>
+      <h3>Как создать автопродукт</h3>
+      <p class="desc">Как создать автопродукт, который продаётся самостоятельно без вашего участия и приносит оплаты на автомате.</p>
+      <ul>
+        <li>как упаковать экспертность в твёрдый готовый продукт, который даёт клиенту результат и позволяет проходить его без вас</li>
+        <li>как выбрать тему продукта, за который действительно готовы платить</li>
+        <li>как определить конкретный результат продукта</li>
+        <li>как превратить авторский подход в понятную методологию</li>
+        <li>как выстроить путь клиента от исходной проблемы до результата</li>
+        <li>как создать продукт, ценность которого не зависит от вашего постоянного личного сопровождения</li>
+      </ul>
+      <button class="next-btn" data-next="3">Перейти к третьей части</button>
+    </div>
+    <div class="media-card">
+      <div class="kind">Видеоурок</div>
+      <div class="video-wrap"><iframe src="https://www.youtube.com/embed/bzedrdVCtW8" title="Как создать автопродукт" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      <div class="duration">74 минуты</div>
+    </div>
+  </article>
+
+  <!-- ЧАСТЬ 3 -->
+  <article class="lesson-panel" data-part="3">
+    <div>
+      <div class="kind">Часть 3 · Видеоурок</div>
+      <h3>Закрытая система продаж</h3>
+      <p class="desc">Как продавать, не продавая: без давления, уговоров и манипуляций.</p>
+      <ul>
+        <li>как создать путь человека от первого интереса до самостоятельного решения о покупке</li>
+        <li>как выстроить систему, которая регулярно приводит к оплатам без вашего постоянного участия</li>
+      </ul>
+      <button class="next-btn" data-next="done">Завершить обучение и получить подарок</button>
+    </div>
+    <div class="media-card">
+      <div class="kind">Видеоурок</div>
+      <div class="video-wrap"><iframe src="https://www.youtube.com/embed/eKciqlnyyXc" title="Закрытая система продаж" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      <div class="duration">~100 минут</div>
+    </div>
+  </article>
+
+</section>
+
+<section class="final-block shell" id="finalBlock">
+  <h2>Если вы дошли до конца обучения — поздравляю!</h2>
+  <p>За прохождение обучения вы получите подарок — разработку идеи вашего уникального продукта, который будет отличать вас от других экспертов.</p>
+  <a class="cta" href="https://t.me/m/e6wUc8IBNTZk">Автопродукт</a>
+</section>
+
+<footer>
+  <b>Кристина Бриин</b><br>
+  Автопродукты · закрытые системы продаж
+</footer>
+
+<script>
+(function(){
+  var STORAGE_KEY = 'payeveryday-progress';
+  var total = 3;
+  var completed;
+  try {
+    completed = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  } catch(e){ completed = []; }
+
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.lesson-tab'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.lesson-panel'));
+  var progressText = document.querySelector('.progress-text');
+  var progressFill = document.querySelector('.progress-fill');
+  var finalBlock = document.getElementById('finalBlock');
+
+  function isUnlocked(part){
+    if(part === 1) return true;
+    return completed.indexOf(part - 1) !== -1;
+  }
+
+  function currentPart(){
+    var active = document.querySelector('.lesson-panel.active');
+    return active ? parseInt(active.getAttribute('data-part'), 10) : 1;
+  }
+
+  function render(activePart){
+    tabs.forEach(function(tab){
+      var part = parseInt(tab.getAttribute('data-part'), 10);
+      tab.classList.remove('unlocked','active','done');
+      if(completed.indexOf(part) !== -1) tab.classList.add('done');
+      if(part === activePart){ tab.classList.add('active'); }
+      else if(isUnlocked(part)){ tab.classList.add('unlocked'); }
+    });
+    panels.forEach(function(panel){
+      var part = parseInt(panel.getAttribute('data-part'), 10);
+      panel.classList.toggle('active', part === activePart);
+    });
+    if(progressText) progressText.textContent = 'Пройдено ' + completed.length + ' из ' + total;
+    if(progressFill) progressFill.style.width = Math.round((completed.length/total)*100) + '%';
+  }
+
+  function goTo(part){
+    if(!isUnlocked(part)) return;
+    render(part);
+    document.getElementById('learning').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var part = parseInt(tab.getAttribute('data-part'), 10);
+      if(isUnlocked(part)) goTo(part);
+    });
+  });
+
+  document.querySelectorAll('.next-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var cur = currentPart();
+      if(completed.indexOf(cur) === -1) completed.push(cur);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(completed));
+      var next = btn.getAttribute('data-next');
+      if(next === 'done'){
+        render(cur);
+        finalBlock.classList.add('visible');
+        finalBlock.scrollIntoView({behavior:'smooth', block:'start'});
+      } else {
+        goTo(parseInt(next, 10));
+      }
+    });
+  });
+
+  // restore final block visibility if part 3 already completed on a previous visit
+  if(completed.indexOf(3) !== -1){
+    finalBlock.classList.add('visible');
+  }
+
+  render(currentPart());
+})();
+</script>
+
